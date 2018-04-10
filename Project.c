@@ -1,40 +1,50 @@
 #include<stdio.h>
 //#include<conio.h>
 
-long double mstons(long double a)
+double mstons(double a)
 {
 	a=a*1000000;
 	return a;
 }
+
+double mstomis(double b)
+{
+	b=b*1000;
+	return b;
+}
+
+
 int main()
 {
-long double result;
-long double SPF; 
-long double RPM; 
-long double MAT; 
-long double MAPF;
-
-
-
+double result;
+double SPF;
+double RPNM;
+double MAT;
+double EAT;
+double p;
 
 
 
 printf("Enter the value of Service Page Fault (SPF):\n");
-scanf("%le",SPF);
+scanf("%lf",&SPF);
 SPF=mstons(SPF);
-printf("Enter the value of Replace Page Modified(RPM):\n");
-scanf("%le",RPM);
-RPM=mstons(RPM);
+
+printf("Enter the value of Replace Page Not Modified(RPNM):\n");
+scanf("%lf",&RPNM);
+RPNM=mstons(RPNM);
+
 printf("Enter the value of Memory Access Time(MAT):\n");
-scanf("%le",MAT);
+scanf("%lf",&MAT);
+//MAT=nstos(MAT);
 
-printf("Enter the value of Maximum Acceptable Page Fault(MAPF):\n");
-scanf("%le",MAPF);
+printf("Enter the value of Effective Address Time(EAT):\n");
+scanf("%lf",&EAT);
+//EAT=nstos(EAT);
 
-long double p;
-p=((MAPF-MAT)/((0.7*RPM)+(0.3*SPF)-(MAT)));
 
-printf("%le\n",p);
+p=(EAT-MAT)/(0.7*RPNM+0.3*SPF-MAT);
+p=p*100;
+printf("%lf%\n",p);
 return 0;
 
 }
