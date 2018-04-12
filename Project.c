@@ -1,5 +1,4 @@
 #include<stdio.h>
-//#include<conio.h>
 
 double mstons(double a)
 {
@@ -22,11 +21,7 @@ double MAT;
 double EAT;
 double c;
 double d;
-
 double p;
-
-
-
 
 
 printf("Enter the value of Replace Page Not Modified(RPNM) in millisecond:\n");
@@ -50,10 +45,17 @@ scanf("%lf",&MAT);
 
 printf("Enter the value of Effective Address Time(EAT) in nanosecond:\n");
 scanf("%lf",&EAT);
-
+if(EAT>200)
+{
+printf("OOPS!!!\nValue of Effective Access Time is More Than 200\nTry Again\n");
+}
+else{
 p=(EAT-MAT)/(RPNM+SPF-MAT);
 p=p*100;
 printf("%lf%\n",p);
 return 0;
+}
+
+
 
 }
